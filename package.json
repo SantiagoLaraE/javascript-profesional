@@ -1,0 +1,22 @@
+{
+  "name": "javascript-profesional",
+  "version": "1.0.0",
+  "description": "Proyecto del curso Profesional de JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SantiagoLaraE/javascript-profesional.git"
+  },
+  "author": "Santiago Lara <oscarescobar773@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SantiagoLaraE/javascript-profesional/issues"
+  },
+  "homepage": "https://github.com/SantiagoLaraE/javascript-profesional#readme",
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
