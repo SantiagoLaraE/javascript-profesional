@@ -1,9 +1,45 @@
-console.log('Hello, TypeScript');
+//Boolean
+let muted: boolean = true;
+muted = false;
+// muted = "callado";
 
-function add(a:number, b:number){
-    return a + b;
+//Números
+
+let numerador: number = 42;
+let denominador: number = 6;
+let resultado = numerador / denominador;
+
+// String
+
+let nombre: string = "Santiago";
+let saludo = `Me llamo ${nombre}`;
+
+console.log(saludo);
+
+// Arreglos
+
+let people: string[] = [];
+people = ["Isabel", "Santiago"];
+
+let peopleAndNumbers: Array <string | number>;
+
+// Enum
+
+enum Color {
+    Rojo = "Rojo",
+    Verde = "Verde", 
+    Azul = "Azul",
 }
 
-const sum = add(2,3);
+let colorFavorito :Color = Color.Verde;
 
-console.log(sum)
+console.log(colorFavorito);
+
+//Any
+
+let comodin: any = "Joker";
+comodin = {type: "Wildcard"}
+
+// Object
+
+let someObject : object = {name: 'Santiago'};
