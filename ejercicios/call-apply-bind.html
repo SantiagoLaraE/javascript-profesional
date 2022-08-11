@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call, Apply y Bind</title>
+</head>
+
+<body>
+    <a href="/ejercicios/">Go Back</a>
+    <p><em>Abre la consola</em></p>
+
+    <ul>
+        <li><button class="cta">Aprender</button></li>
+        <li><button class="cta">Aprender Más</button></li>
+        <li><button class="cta">Lograr Más</button></li>
+    </ul>
+
+    <script>
+        //Establecer this, usando Call
+
+        function saludar() {
+            console.log(`Hola, soy ${this.name} ${this.lastname}`);
+        };
+
+        const person = {
+            name: 'Santiago',
+            lastname: 'Lara'
+        }
+
+        saludar.call(person);
+
+        //Establecer this usando Call y pasar parámetros
+        //Los parámetros se pasan y se separan mediante comas
+
+        function caminar(metros, direccion) {
+            console.log(`${this.name} camina ${metros} metros hacia ${direccion}`);
+        }
+
+        caminar.call(person, 400, "norte");
+
+        //Establecer this, usando Apply
+        saludar.apply(person);
+
+        //Establecer this usando Call y pasar parámetros
+        //Los parámetros se pasan mediante un array.
+
+        caminar.apply(person, [800, "noreste"]);
+
+        //Bind no llama la función si no la construye, por lo tanto tenemos que guardarla para luego poder ejecutarla.
+
+        const person2 = {
+            name: 'Oscar',
+            lastname: 'Escobar',
+        }
+
+        const person2Saluda = saludar.bind(person2);
+        person2Saluda();
+
+        const person2Camina = caminar.bind(person2);
+        person2Camina(1000, 'sur');
+
+        //Cuando usar estor métodos
+
+        const buttons = document.getElementsByClassName('cta');
+        const buttons2 = document.querySelectorAll('.cta');
+        // console.log(buttons)
+        // console.log(buttons2)
+        
+        // buttons.forEach(btn =>{
+        //     btn.addEventListener('click', () => {
+        //         alert('nunca pares de aprender')
+        //     })
+        // })
+
+        Array.prototype.forEach.call(buttons, btn =>{
+            btn.addEventListener('click', () => {
+                alert('nunca pares de aprender')
+            })
+        })
+
+    </script>
+
+</body>
+
+</html>
